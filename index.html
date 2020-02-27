@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>TODO list</title>
+</head>
+
+<body>
+    <div id="loading">
+        <div class="loading--circle"></div>
+    </div>
+
+    <div id="container">
+        <h1>TODO</h1>
+
+        <div class="container--text">
+            <div class="container--input">
+                <p>Write down any item you wanna remember</p>
+                <input type="text" id="input" maxlength="45" autocomplete="off" spellcheck="false">
+                <p>to add to the list, just press <span class="color">ENTER</span>!</p>
+            </div>
+
+            <div class="container--list">
+                <div class="container--itemCounter">
+                    <span id="counter">0</span>
+                    <p>list items</p>
+                </div>
+
+                <button id="clear">
+                    clear
+                </button>
+
+                <ul id="container--ULlist"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
