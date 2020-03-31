@@ -23,6 +23,10 @@ And, when you've already done, you can just click on the reminder itself, and it
 
 And if you want to, you can just click the `X` button, and it disappears.
 
+## feature
+
+It has LocalStorage, now you can save your notes!
+
 ## tools i've used
 
 * HTML
