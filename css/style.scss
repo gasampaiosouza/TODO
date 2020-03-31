@@ -3,275 +3,278 @@ $black: #364f6b; // 252a34
 $white: #f5f5f5; //eaeaea
 $list: #f0f0f0;
 
-$font: 'Roboto',
-sans-serif;
+$font: 'Fira Sans', sans-serif;
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;600&display=swap');
+
 @import './animations';
 
 .color {
-    color: $main;
-    font-weight: bold;
+	color: $main;
+	font-weight: bold;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
-    background: $white;
-    color: $black;
-    font-family: $font;
+	background: $white;
+	color: $black;
+	font-family: $font;
 }
 
 @keyframes loadingAnimation {
-    100% {
-        transform: rotate(360deg);
-    }
+	100% {
+		transform: rotate(360deg);
+	}
 }
 
 @keyframes loadingAnimationReverse {
-    100% {
-        transform: rotate(-360deg);
-    }
+	100% {
+		transform: rotate(-360deg);
+	}
 }
 
 .none {
-    display: none !important;
+	display: none !important;
 }
 
 #loading {
-    background: #f5f5f5;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    transition: all .5s;
+	background: #f5f5f5;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	transition: all .5s;
 
-    .loading--circle {
-        width: 85px;
-        height: 85px;
-        border: 5px solid;
-        border-radius: 50%;
-        border-color: #364f6b transparent transparent;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        margin: auto;
-        animation: loadingAnimation 1s linear infinite;
-    }
+	.loading--circle {
+		width: 50px;
+		height: 50px;
+		border: 5px solid;
+		border-radius: 50%;
+		border-color: #364f6b transparent transparent;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		animation: loadingAnimation 1s linear infinite;
+	}
 }
 
 // container
 
 #container {
-    position: relative;
-    width: 50%;
-    height: 100vh;
-    margin: 0 auto;
+	position: relative;
+	width: 50%;
+	height: 100vh;
+	margin: 0 auto;
 
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 
-    h1 {
-        color: $main;
-        text-align: center;
-        margin: 20px 0;
-        letter-spacing: 5px;
+	h1 {
+		color: $main;
+		text-align: center;
+		margin: 20px 0;
+		letter-spacing: 5px;
 
-        animation: top-bottom 1.5s ease-in-out;
-    }
+		animation: top-bottom 1.5s ease-in-out;
+	}
 
-    .container--text {
-        width: 80%;
-        height: 100%;
-        margin: 0 auto;
-    }
+	.container--text {
+		width: 80%;
+		height: 100%;
+		margin: 0 auto;
+	}
 
-    .container--input {
-        input {
-            background: transparent;
-            border: none;
-            border-bottom: 3px solid $main;
-            outline: none;
-            width: 100%;
-            padding: 5px 10px;
-            font-size: 1.3em;
+	.container--input {
+		input {
+			font-weight: 200 !important;
 
-            margin: 20px 0 10px;
-            text-align: center;
+			background: transparent;
+			border: none;
+			border-bottom: 3px solid $main;
+			outline: none;
+			width: 100%;
+			padding: 5px 10px;
+			font-size: 1.3em;
 
-            animation: width 1.5s ease-in-out;
-        }
+			margin: 20px 0 10px;
+			text-align: center;
 
-        p {
-            font-size: .9em;
-            text-align: center;
-            letter-spacing: .5px;
+			animation: width 1.5s ease-in-out;
+		}
 
-            font-weight: 300;
+		p {
+			font-size: .9em;
+			text-align: center;
+			letter-spacing: .5px;
 
-            &:first-child {
-                position: relative;
-                font-size: 1em;
-                font-weight: normal;
+			font-weight: 300;
 
-                animation: bottom-top 1.5s ease-in-out;
-            }
+			&:first-child {
+				position: relative;
+				font-size: 1em;
+				font-weight: normal;
 
-            &:nth-last-child(1) {
-                animation: opacity 2s ease-in-out;
-            }
-        }
-    }
+				animation: bottom-top 1.5s ease-in-out;
+			}
 
-    .container--list {
-        text-align: center;
+			&:nth-last-child(1) {
+				animation: opacity 2s ease-in-out;
+			}
+		}
+	}
 
-        #clear {
-            width: 50%;
-            cursor: pointer;
+	.container--list {
+		text-align: center;
 
-            border: none;
-            background: $main;
-            outline: none;
+		#clear {
+			width: 50%;
+			cursor: pointer;
 
-            padding: 10px 0;
-            border-radius: 5px;
-            color: $white;
+			border: none;
+			background: $main;
+			outline: none;
 
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: .5px;
+			padding: 10px 0;
+			border-radius: 5px;
+			color: $white;
 
-            animation: bottom-top 1.5s ease-in-out;
+			font-weight: bold;
+			text-transform: uppercase;
+			letter-spacing: .5px;
 
-            transition: box-shadow .2s ease;
+			animation: bottom-top 1.5s ease-in-out;
 
-            &:hover {
-                box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: .15)
-            }
-        }
+			transition: box-shadow .2s ease;
 
-        .container--itemCounter {
-            width: 100%;
-            padding: 20px 0;
-            // background: red;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+			&:hover {
+				box-shadow: 2px 2px 5px rgba($color: #000000, $alpha: .15);
+			}
+		}
 
-            span {
-                font-weight: bold;
-                font-size: 1.2em;
-                animation: right-left 1.5s ease-out;
-            }
+		.container--itemCounter {
+			width: 100%;
+			padding: 20px 0;
+			// background: red;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
 
-            p {
-                font-weight: 300;
-                text-align: right;
-                animation: left-right 1.5s ease-out;
-            }
-        }
+			span {
+				font-weight: bold;
+				font-size: 1.2em;
+				animation: right-left 1.5s ease-out;
+			}
 
-        ul {
-            list-style: none;
-            font-size: 1.2em;
+			p {
+				font-weight: 300;
+				text-align: right;
+				animation: left-right 1.5s ease-out;
+			}
+		}
 
-            li {
-                cursor: pointer;
-                position: relative;
+		ul {
+			list-style: none;
+			font-size: 1.2em;
 
-                width: 100%;
-                margin: 20px 0;
-                padding: 10px 20px;
-                background: $list;
-                border-radius: 5px;
-                font-weight: 300;
-                text-align: left;
+			li {
+				cursor: pointer;
+				user-select: none;
+				position: relative;
 
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+				width: 100%;
+				margin: 20px 0;
+				padding: 10px 20px;
+				background: $list;
+				border-radius: 5px;
+				font-weight: 300;
+				text-align: left;
 
-                animation: entrance .5s ease-in-out;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
 
-                // label {
-                //     position: relative;
+				animation: entrance .5s ease-in-out;
 
-                //     input {
-                //         opacity: 0;
-                //         height: 0px;
-                //         width: 0px;
+				// label {
+				//     position: relative;
 
-                //         &:checked+.list--checkmark {
-                //             background-color: $white;
-                //         }
-                //     }
+				//     input {
+				//         opacity: 0;
+				//         height: 0px;
+				//         width: 0px;
 
-                //     .list--checkmark {
-                //         cursor: pointer;
+				//         &:checked+.list--checkmark {
+				//             background-color: $white;
+				//         }
+				//     }
 
-                //         position: absolute;
-                //         top: 50%;
-                //         left: 50%;
-                //         transform: translate(-50%, -50%);
-                //         height: 25px;
-                //         width: 25px;
-                //         background-color: $main;
+				//     .list--checkmark {
+				//         cursor: pointer;
 
-                //         border-radius: 5px;
+				//         position: absolute;
+				//         top: 50%;
+				//         left: 50%;
+				//         transform: translate(-50%, -50%);
+				//         height: 25px;
+				//         width: 25px;
+				//         background-color: $main;
 
-                //         transition: all .2s ease-in-out;
-                //     }
-                // }
-            }
-        }
-    }
+				//         border-radius: 5px;
+
+				//         transition: all .2s ease-in-out;
+				//     }
+				// }
+			}
+		}
+	}
 }
 
 @keyframes entrance {
-    from {
-        opacity: 0;
-        transform: translateX(50px)
-    }
+	from {
+		opacity: 0;
+		transform: translateX(50px);
+	}
 
-    to {
-        opacity: 1;
-        transform: none;
-    }
+	to {
+		opacity: 1;
+		transform: none;
+	}
 }
 
 .close {
-    position: absolute;
-    top: 0;
-    right: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
 
-    border-radius: 0 5px 5px 0;
+	border-radius: 0 5px 5px 0;
 
-    font-size: 25px;
-    color: $main;
-    height: 100%;
-    padding: 5px 16px;
+	font-size: 25px;
+	color: $main;
+	height: 100%;
+	padding: 5px 16px;
 
-    transition: all .2s ease-in-out;
-    user-select: none;
+	transition: all .2s ease-in-out;
+	user-select: none;
 
-    &:hover {
-        background-color: $main;
-        color: $white;
-    }
+	&:hover {
+		background-color: $main;
+		color: $white;
+	}
 }
 
 .list--item__active {
-    text-decoration: line-through;
-    background-color: $black !important;
-    color: $white;
-    font-weight: 700;
+	text-decoration: line-through;
+	background-color: $black !important;
+	color: $white;
+	font-weight: 700;
 }

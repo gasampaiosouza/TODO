@@ -7,6 +7,13 @@ const listaLI = document.getElementsByTagName('li');
 
 const closeClass = document.getElementsByClassName("close");
 
+function saveToStorage() {
+    localStorage.setItem('lista', listaUL.innerHTML);
+}
+
+if (localStorage.getItem('lista'))
+    listaUL.innerHTML = localStorage.getItem('lista');
+
 //* loading animation
 setTimeout(() => {
     document.getElementById('loading').style.opacity = '0';
@@ -60,6 +67,8 @@ input.addEventListener('keyup', (e) => {
             input.value = '';
 
             counter.innerHTML = listaLI.length;
+
+            saveToStorage();
         } else
             alert('Preencha o input!');
     }
@@ -68,15 +77,17 @@ input.addEventListener('keyup', (e) => {
 //* listening for a LI click
 listaUL.onclick = (e) => {
     if (e.target.tagName === 'LI')
-        e.target.classList.toggle('list--item__active');
+        (e.target.classList.toggle('list--item__active'), saveToStorage());
 }
 
 button.onclick = () => {
     if (!listaLI.length)
-        alert('não tem nada pra limpar!')
+        alert(`there's nothing to clear`);
     else {
         listaUL.innerHTML = '';
-        counter.innerHTML = 0;
+        counter.innerHTML = listaLI.length;
+
+        saveToStorage();
     }
 }
 
@@ -84,4 +95,6 @@ function removeSelectedItem(value) {
     listaUL.removeChild(document.getElementById(`${value}`));
     IDarray.splice(IDarray.indexOf(value), 1);
     counter.innerHTML = listaLI.length;
+
+    saveToStorage();
 }
